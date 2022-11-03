@@ -1,13 +1,29 @@
 const teamStructure = {
   name: 'Samuel',
-  team: [
+  teams: [
     {
-      name: 'Emmanual',
-      team: [],
+      name: 'Emmanuel',
+      teams: [
+        {
+          name: 'Tadey',
+          teams: [],
+        },
+      ],
     },
     {
       name: 'Bayo',
-      team: [],
+      teams: [],
     },
   ],
 };
+
+const getTeamsDetails = (t) => {
+  if (t.teams.length === 0) return;
+
+  t.teams.forEach((team) => {
+    console.log(team);
+    getTeamsDetails(team);
+  });
+};
+
+getTeamsDetails(teamStructure);
